@@ -19,7 +19,9 @@
 
     <div class="container border rounded-3 p-4 mt-4">
     <h1><?php echo htmlspecialchars($product['libelle']); ?></h1>
-    <p><strong>Prix:</strong> <?php echo htmlspecialchars($product['prix']); ?> €</p>
+    <p><strong>Prix:</strong> <?php echo htmlspecialchars($product['prix']); ?> FCFA</p>
+    <p><strong>Quantite:</strong> <?php echo htmlspecialchars($product['quantite']); ?> </p>
+
     <p><strong>Description:</strong> <?php echo nl2br(htmlspecialchars($product['description'])); ?></p>
     </div>
 

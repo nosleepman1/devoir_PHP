@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quantite = intval($_POST['quantite']);
         $description = $_POST['description'];
 
-       // if(!empty($libelle) && !empty($prix) && !empty($quantite) && !empty($description)) {
+       if(!empty($libelle) && !empty($prix) && !empty($quantite) && !empty($description)) {
             
             if($prix < 0 || $prix > 20000000 || $quantite < 5 || $quantite > 100) {
                 $_SESSION['error'] = "Le prix et la quantité doivent être des valeurs positives.";
@@ -35,10 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 exit();
             }
             
-        // } else {
-        //     $_SESSION['error'] = "Tous les champs sont obligatoires.";
-        //     header('Location: /views/pages/addProduct.php');
-        //     exit();
-        // }
+        } else {
+            $_SESSION['error'] = "Tous les champs sont obligatoires.";
+            header('Location: /views/pages/addProduct.php');
+            exit();
+        }
         
     }

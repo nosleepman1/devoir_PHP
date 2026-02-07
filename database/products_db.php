@@ -26,11 +26,11 @@
         $stmt = $pdo->prepare($sql);
         return $stmt->execute(
             [
-                'id' => $id,
                 'libelle' => $libelle,
                 'prix' => $prix,
                 'quantite' => $quantite,
-                ':description' => $description
+                ':description' => $description,
+                'id' => $id
             ]
         );
     }

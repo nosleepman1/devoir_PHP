@@ -9,7 +9,7 @@
         $quantite = intval($_POST['quantite']);
         $description = $_POST['description'];
 
-       // if($prix < 0 || $prix > 20000000 || $quantite < 5 || $quantite > 100) {
+        if($prix < 0 || $prix > 20000000 || $quantite < 5 || $quantite > 100) {
             $_SESSION['error'] = "Le prix et la quantité doivent être des valeurs positives.";
             header('Location: /views/pages/editProduct.php?id=' . $id);
             exit();
@@ -30,7 +30,7 @@
             header('Location: /views/pages/editProduct.php?id=' . $id);
             exit();
         }
-    // } else {
-    //     header('Location: /views/pages/produits.php');
-    //     exit();
-    // }
+    } else {
+        header('Location: /views/pages/produits.php');
+        exit();
+}

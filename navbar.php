@@ -8,6 +8,9 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item"><a class="nav-link  <?php echo $index ? 'active' : '' ?>" href="/index.php"  > Accueil</a></li>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                      <li class="nav-item"><a class="nav-link  <?php echo $produits ? 'active' : '' ?>" href="/views/pages/produits.php"  > Produits</a></li> 
+                    <?php endif; ?>
                     <?php if (!isset($_SESSION['user_id'])): ?>
                     <li class="nav-item"><a class="nav-link <?php echo $login ? 'active' : '' ?>" href="/views/auth/login.php"  > Connexion</a></li>
                     <li class="nav-item"><a class="nav-link <?php echo $register ? 'active' : '' ?>" href="/views/auth/register.php"  > Inscription</a></li>
